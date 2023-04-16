@@ -1,0 +1,19 @@
+[project]
+name = "japyconjugator"
+version = "1.0.0"
+authors = [
+    { name = "Simone Bondi" },
+]
+description = "A python package for conjugating verbs in the Japanese language."
+readme = "README.md"
+requires-python = ">=3"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Processing :: Linguistic"
+]
+
+[project.urls]
+"Repository" = "https://github.com/Shibodd/japyconjugator"
