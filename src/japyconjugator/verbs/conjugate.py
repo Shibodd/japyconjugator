@@ -1,11 +1,12 @@
-from .defs import VerbClass, VerbPolarity, VerbForm
+from ..defs import Polarity
+from .defs import VerbClass, VerbForm
 from . import conjugators as conjugators
 
 def conjugate(
     verb_dictform: str,
     verb_class: VerbClass,
     form: VerbForm,
-    polarity: VerbPolarity):
+    polarity: Polarity):
   """
   Calls the appropriate conjugator in jp_verb_conjugator.conjugators, and returns the conjugated verb.
   """
