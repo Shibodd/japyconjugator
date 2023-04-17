@@ -1,10 +1,10 @@
 import enum
 
-class AdjectiveClass(enum.Enum):
+class AdjectiveClass(enum.StrEnum):
   I = "i"
   Na = "na"
 
-class AdjectiveForm(enum.Enum):
+class AdjectiveForm(enum.StrEnum):
   Plain = "plain",
   PlainPast = "plainpast",
   Polite = "polite",

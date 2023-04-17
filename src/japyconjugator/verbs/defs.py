@@ -1,10 +1,10 @@
-from enum import Enum
+import enum
 
-class VerbClass(Enum):
+class VerbClass(enum.StrEnum):
   Ichidan = "ichidan"
   Godan = "godan"
 
-class VerbForm(Enum):
+class VerbForm(enum.StrEnum):
   Plain = "plain",
   PlainPast = "plainpast",
   Polite = "polite",

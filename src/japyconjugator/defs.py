@@ -1,5 +1,5 @@
-from enum import Enum
+import enum
 
-class Polarity(Enum):
+class Polarity(int, enum.StrEnum):
   Affirmative = "affirmative",
   Negative = "negative"
