@@ -1,6 +1,6 @@
 from ..defs import Polarity
 from .defs import VerbClass, VerbForm
-from . import conjugators as conjugators
+from . import conjugators
 
 def conjugate(
     verb_dictform: str,
