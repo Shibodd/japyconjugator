@@ -1,15 +1,21 @@
 from ..defs import Polarity
-from .defs import AdjectiveClass, AdjectiveForm
+
 from . import conjugators
+from .defs import AdjectiveForm
 
 def conjugate(
     adj_dictform: str,
-    adj_class: AdjectiveClass,
     form: AdjectiveForm,
     polarity: Polarity):
   """
   Returns the conjugated adjective.
   """
+
+  if adj_dictform.endswith('い'):
+    adj_class = conjugators.AdjectiveClass.I
+  else:
+    adj_class = conjugators.AdjectiveClass.Na
+
   CONJUGATORS = {
     AdjectiveForm.Plain: conjugators.plain,
     AdjectiveForm.PlainPast: conjugators.plainpast,
