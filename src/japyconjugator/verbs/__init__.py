@@ -1,1 +1,1 @@
-from .conjugate import *
+from .conjugators import *

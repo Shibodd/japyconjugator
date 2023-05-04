@@ -1,34 +1,48 @@
-from ..defs import Polarity
 from .defs import AdjectiveClass
-from .conjugation_helpers import common_logic
+from . import conjugation_helpers as helpers
 
 
-def plain(adj_dictform, adj_class: AdjectiveClass, polarity: Polarity):
-  return common_logic(adj_dictform, adj_class, polarity, 
-    affirmative_i_suffix=adj_dictform[-1], # restore last mora
-    negative_suffix="い")
+def plain_affirmative(adj_dictform, adj_class: AdjectiveClass):
+  return helpers.invariant_with_suffix(adj_dictform, adj_class,
+    i_suffix = "い")
+
+def plain_negative(adj_dictform, adj_class: AdjectiveClass):
+  return helpers.negative_invariant(adj_dictform, adj_class) + "い"
 
 
-def plainpast(adj_dictform, adj_class: AdjectiveClass, polarity: Polarity):
-  return common_logic(adj_dictform, adj_class, polarity, 
-    affirmative_i_suffix="かった",
-    affirmative_na_suffix="だった",
-    negative_suffix="かった")
+
+def plainpast_affirmative(adj_dictform, adj_class: AdjectiveClass):
+  return helpers.invariant_with_suffix(adj_dictform, adj_class,
+    i_suffix = "かった",
+    na_suffix="だった")
+
+def plainpast_negative(adj_dictform, adj_class: AdjectiveClass):
+  return helpers.negative_invariant(adj_dictform, adj_class) + "かった"
 
 
-def polite(adj_dictform, adj_class: AdjectiveClass, polarity: Polarity):
-  return plain(adj_dictform, adj_class, polarity) + "です"
+
+def polite_affirmative(adj_dictform, adj_class: AdjectiveClass):
+  return plain_affirmative(adj_dictform, adj_class) + "です"
+
+def polite_negative(adj_dictform, adj_class: AdjectiveClass):
+  return plain_negative(adj_dictform, adj_class) + "です"
 
 
-def politepast(adj_dictform, adj_class: AdjectiveClass, polarity: Polarity):
-  return common_logic(adj_dictform, adj_class, polarity, 
-    affirmative_i_suffix="かったです",
-    affirmative_na_suffix="でした",
-    negative_suffix="かったです")
+
+def politepast_affirmative(adj_dictform, adj_class: AdjectiveClass):
+  return helpers.invariant_with_suffix(adj_dictform, adj_class,
+    i_suffix = "かったです",
+    na_suffix="でした")
+
+def politepast_negative(adj_dictform, adj_class: AdjectiveClass):
+  return helpers.negative_invariant(adj_dictform, adj_class) + "かったです"
 
 
-def connective(adj_dictform, adj_class: AdjectiveClass, polarity: Polarity):
-  return common_logic(adj_dictform, adj_class, polarity, 
-    affirmative_i_suffix="くて",
-    affirmative_na_suffix="で",
-    negative_suffix="くて")
+
+def connective_affirmative(adj_dictform, adj_class: AdjectiveClass):
+  return helpers.invariant_with_suffix(adj_dictform, adj_class,
+    i_suffix = "くて",
+    na_suffix = "で")
+
+def connective_negative(adj_dictform, adj_class: AdjectiveClass):
+  return helpers.negative_invariant(adj_dictform, adj_class) + "くて"
