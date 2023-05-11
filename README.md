@@ -1,7 +1,11 @@
 # japyconjugator
 A python package for conjugating verbs and adjectives in the Japanese language
 
-Usage:
+## Installation:
+
+pip install japyconjugator
+
+## Usage:
 ```python3
 from japyconjugator import verbs
 verbs.plainpast_negative('飲む', verbs.VerbClass.Godan) # returns '飲まなかった'
